@@ -10,8 +10,8 @@ App::uses('Component', 'Controller');
  * @author Patrick Langendoen <github-bradcrumb@patricklangendoen.nl>
  * @author Marc-Jan Barnhoorn <github-bradcrumb@marc-jan.nl>
  * @copyright 2013 (c), Patrick Langendoen & Marc-Jan Barnhoorn
- * @package LessCompiler
- * @license http://opensource.org/licenses/gpl-license.php GNU Public License 
+ * @package LessCompilerse 
+ * @license http://opensource.org/licenses/GPL-3.0 GNU GENERAL PUBLIC LICENSE
  * @todo add php-functions to the lessc configuration
  */
 class LessComponent extends Component {

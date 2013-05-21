@@ -32,6 +32,10 @@ Less-files for the plugin and themes should be stored in `app/Plugin/{pluginname
 The default duration time for the cache is 4 hours.
 After that time the cache expires and after a new request the component will check for updated or added less-files.
 
+## License
+GNU General Public License, version 3 (GPL-3.0)
+http://opensource.org/licenses/GPL-3.0
+
 
 
 

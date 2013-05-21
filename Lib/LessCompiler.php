@@ -8,7 +8,7 @@ App::uses('lessc', 'LessCompiler.Vendor');
  * @author Marc-Jan Barnhoorn <github-bradcrumb@marc-jan.nl>
  * @copyright 2013 (c), Patrick Langendoen & Marc-Jan Barnhoorn
  * @package LessCompiler
- * @license http://opensource.org/licenses/gpl-license.php GNU Public License
+ * @license http://opensource.org/licenses/GPL-3.0 GNU GENERAL PUBLIC LICENSE
  */
 class LessCompiler extends lessc {
 
