@@ -1,6 +1,6 @@
 # LessCompiler
 
-LessCompiler is a CakePHP component to compile less-files (http://lesscss.org/) by using lessc.php (http://leafo.net/lessphp/).
+LessCompiler is a CakePHP LESS component to (automatically) compile less-files (http://lesscss.org/) by using lessc.php (http://leafo.net/lessphp/).
 
 ## Requirements
 
@@ -20,7 +20,7 @@ The master branch has the following requirements:
 
 The component will check for less-files to (re)compile automatically when:
  * Debug level is > 0
- * autoRun is set to true in the config
+ * autoRun is set to true in the component settings
  * Cache-time expires
 
 In a live environment one can force the component to (re)compile all less-files by supplying forceLessToCompile=true in the request string.
@@ -31,6 +31,19 @@ Less-files for the plugin and themes should be stored in `app/Plugin/{pluginname
 
 The default duration time for the cache is 4 hours.
 After that time the cache expires and after a new request the component will check for updated or added less-files.
+
+### Possible Component Settings
+	public $components = array(
+		'LessCompiler.less' 	=> array(
+			'sourceFolder' 		=> false 		// Where to look for LESS files, (From the APP directory)
+       		'targetFolder' 		=> false 		// Where to put the generated css (From the webroot directory)
+			'formatter' 		=> 'compressed' // lessphp compatible formatter
+			'preserveComments' 	=> null 		// Preserve comments or remove them
+			'variables' 		=> array() 		// Pass variables from php to LESS
+			'forceCompiling' 	=> false		// Always recompile
+			'autoRun' 			=> false		// Check if compilation is necessary, this ignores the CakePHP Debug setting
+		)
+	);
 
 ## License
 GNU General Public License, version 3 (GPL-3.0)
