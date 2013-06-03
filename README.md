@@ -13,7 +13,7 @@ The master branch has the following requirements:
 
 * Clone/Copy the files in this directory into `app/Plugin/LessCompiler`
 * Ensure the plugin is loaded in `app/Config/bootstrap.php` by calling `CakePlugin::load('LessCompiler');`
-* Include the toolbar component in your `AppController.php`:
+* Include the Less component in your `AppController.php`:
    * `public $components = array('LessCompiler.Less');`
 
 ## Documentation
@@ -35,13 +35,13 @@ After that time the cache expires and after a new request the component will che
 ### Possible Component Settings
 	public $components = array(
 		'LessCompiler.less' 	=> array(
-			'sourceFolder' 		=> false 		// Where to look for LESS files, (From the APP directory)
-       		'targetFolder' 		=> false 		// Where to put the generated css (From the webroot directory)
-			'formatter' 		=> 'compressed' // lessphp compatible formatter
-			'preserveComments' 	=> null 		// Preserve comments or remove them
-			'variables' 		=> array() 		// Pass variables from php to LESS
-			'forceCompiling' 	=> false		// Always recompile
-			'autoRun' 			=> false		// Check if compilation is necessary, this ignores the CakePHP Debug setting
+			'sourceFolder' 		=> false, 			// Where to look for LESS files, (From the APP directory)
+       		'targetFolder' 		=> false, 			// Where to put the generated css (From the webroot directory)
+			'formatter' 		=> 'compressed',	// lessphp compatible formatter
+			'preserveComments' 	=> null, 			// Preserve comments or remove them
+			'variables' 		=> array(),			// Pass variables from php to LESS
+			'forceCompiling' 	=> false,			// Always recompile
+			'autoRun' 			=> false			// Check if compilation is necessary, this ignores the CakePHP Debug setting
 		)
 	);
 
