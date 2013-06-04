@@ -25,7 +25,7 @@ class LessComponent extends Component {
  * @var array
  */
 	public $settings = array(
-		'sourceFolder'		=> false		// Where to look for LESS files, (From the APP directory)
+		'sourceFolder'		=> 'less'		// Where to look for LESS files, (From the APP directory)
 	,	'targetFolder'		=> false		// Where to put the generated css (From the webroot directory)
 	,	'formatter'			=> 'compressed' // lessphp compatible formatter
 	,	'preserveComments'	=> null			// Preserve comments or remove them
