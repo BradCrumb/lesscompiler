@@ -1,5 +1,5 @@
 <?php
-App::uses('lessc', 'LessCompiler.Vendor/lessphp');
+App::uses('lessc', 'LessCompiler.Vendor');
 
 /**
  * LessCompiler
