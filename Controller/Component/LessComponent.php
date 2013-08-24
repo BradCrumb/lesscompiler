@@ -25,13 +25,13 @@ class LessComponent extends Component {
  * @var array
  */
 	public $settings = array(
-		'sourceFolder'		=> 'less'		// Where to look for LESS files, (From the APP directory)
-	,	'targetFolder'		=> false		// Where to put the generated css (From the webroot directory)
-	,	'formatter'			=> 'compressed' // lessphp compatible formatter
-	,	'preserveComments'	=> null			// Preserve comments or remove them
-	,	'variables'			=> array()		// Pass variables from php to LESS
-	,	'forceCompiling'	=> false		// Always recompile
-	,	'autoRun'			=> false		// Check if compilation is necessary, this ignores the CakePHP Debug setting
+		'sourceFolder'		=> 'less',			// Where to look for LESS files, (From the APP directory)
+		'targetFolder'		=> false,			// Where to put the generated css (From the webroot directory)
+		'formatter'			=> 'compressed',	// lessphp compatible formatter
+		'preserveComments'	=> null,			// Preserve comments or remove them
+		'variables'			=> array(),			// Pass variables from php to LESS
+		'forceCompiling'	=> false,			// Always recompile
+		'autoRun'			=> false			// Check if compilation is necessary, this ignores the CakePHP Debug setting
 	);
 
 /**
@@ -382,7 +382,7 @@ class LessComponent extends Component {
 			foreach ($this->_lessFolders as $key => $lessFolder) {
 				foreach ($lessFolder->find() as $file) {
 					$file = new File($file);
-					if ($file->ext() == 'less' && substr($file->name, 0, 2) !== '._') {
+					if ($file->ext() == 'less' && substr($file->name, 0, 2) !== '._' && substr($file->name, 0, 1) !== '_') {
 						$lessFile = $lessFolder->path . DS . $file->name;
 						$cssFile = $this->_cssFolders[$key]->path . DS . str_replace('.less', '.css', $file->name);
 
