@@ -14,7 +14,7 @@
         {
             "name": "Patrick Langendoen",
             "role": "Author"
-        },
+        }
     ],
     "support": {
         "source": "https://github.com/BradCrumb/lesscompiler"
