@@ -1,0 +1,31 @@
+{
+    "name": "bradcrumb/lesscompiler",
+    "description": "CakePHP LessCompiler",
+    "type": "cakephp-plugin",
+    "keywords": ["cakephp", "less", "component", "compiler"],
+    "homepage": "https://github.com/BradCrumb/lesscompiler",
+    "license": "GPL-3.0",
+    "authors": [
+        {
+            "name": "Marc-Jan Barnhoorn",
+            "homepage": "http://www.marc-jan.nl",
+            "role": "Author"
+        },
+        {
+            "name": "Patrick Langendoen",
+            "role": "Author"
+        }
+    ],
+    "support": {
+        "source": "https://github.com/BradCrumb/lesscompiler"
+    },
+    "require": {
+        "php": ">=5.3.0",
+        "composer/installers": "*"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.1.x-dev"
+        }
+    }
+}
