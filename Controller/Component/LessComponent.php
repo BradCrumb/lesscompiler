@@ -374,11 +374,11 @@ class LessComponent extends Component {
  	 * - The requested parameter has been set to force the check
  	 * - The component should run always (autorun) despite of the debuglevel
  	 */
-		if (($this->_isCacheEnabled && false === $this->_getCacheKey('less_compiled')) ||
+		if ((($this->_isCacheEnabled() && false === $this->_getCacheKey('less_compiled')) ||
 			Configure::read('debug') > 0 ||
 			true === $this->settings['autoRun'] ||
 			true === $this->settings['forceCompiling']
-			) {
+			) && $this->enabled) {
 			foreach ($this->_lessFolders as $key => $lessFolder) {
 				foreach ($lessFolder->find() as $file) {
 					$file = new File($file);
@@ -401,9 +401,11 @@ class LessComponent extends Component {
 
 /**
  * Compile the less files
+ *
  * @param  string $inputFile
  * @param  string $outputFile
  * @param  string $lessFolder
+ *
  * @return boolean
  */
 	protected function _autoCompileLess($inputFile, $outputFile, $lessFolder) {
@@ -442,6 +444,7 @@ class LessComponent extends Component {
 
 /**
  * Clean the generated CSS files
+ *
  * @return array
  */
 	public function cleanGeneratedCss() {
@@ -476,5 +479,12 @@ class LessComponent extends Component {
 		mkdir($this->_cacheFolder);
 
 		return $cleanedFiles;
+	}
+
+/**
+ * Remove the existing instance of lessc
+ */
+	public function removeInstance() {
+		self::$_instance = null;
 	}
 }
