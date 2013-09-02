@@ -104,8 +104,6 @@ class LessComponentTest extends CakeTestCase {
 		$Less->startup($this->Controller);
 		$Less->initialize($this->Controller);
 
-		$Less->removeInstance();
-
 		$this->assertTrue($Less->settings['preserveComments']);
 
 		//Clean all generated CSS files
@@ -123,8 +121,6 @@ class LessComponentTest extends CakeTestCase {
 		$Less = new LessComponent(new ComponentCollection(), array('variables' => array('color' => '#ffffff')));
 		$Less->startup($this->Controller);
 		$Less->initialize($this->Controller);
-
-		$Less->removeInstance();
 
 		$this->assertTrue($Less->settings['variables']['color'] == '#ffffff');
 

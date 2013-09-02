@@ -91,13 +91,6 @@ class LessComponent extends Component {
 	public $enabled = true;
 
 /**
- * Holder for the LessCompiler instance
- *
- * @var LessCompiler
- */
-	protected static $_instance;
-
-/**
  * Minimum required PHP version
  *
  * @var string
@@ -405,7 +398,7 @@ class LessComponent extends Component {
  * @param  string $inputFile
  * @param  string $outputFile
  * @param  string $lessFolder
- *
+ *non
  * @return boolean
  */
 	protected function _autoCompileLess($inputFile, $outputFile, $lessFolder) {
@@ -417,18 +410,18 @@ class LessComponent extends Component {
 			unserialize(file_get_contents($cacheFile)):
 			$inputFile;
 
-		if (!self::$_instance instanceof LessCompiler) {
-			self::$_instance = new LessCompiler();
-			self::$_instance->setFormatter($this->settings['formatter']);
-			if (is_bool($this->settings['preserveComments'])) {
-				self::$_instance->setPreserveComments($this->settings['preserveComments']);
-			}
-			if ($this->settings['variables']) {
-				self::$_instance->setVariables($this->settings['variables']);
-			}
+		$lessCompiler = new LessCompiler();
+		$lessCompiler->setFormatter($this->settings['formatter']);
+
+		if (is_bool($this->settings['preserveComments'])) {
+			$lessCompiler->setPreserveComments($this->settings['preserveComments']);
 		}
 
-		$newCache = self::$_instance->cachedCompile($cache, $this->settings['forceCompiling']);
+		if ($this->settings['variables']) {
+			$lessCompiler->setVariables($this->settings['variables']);
+		}
+
+		$newCache = $lessCompiler->cachedCompile($cache, $this->settings['forceCompiling']);
 
 		if (true === $this->settings['forceCompiling'] ||
 			!is_array($cache) ||
@@ -479,12 +472,5 @@ class LessComponent extends Component {
 		mkdir($this->_cacheFolder);
 
 		return $cleanedFiles;
-	}
-
-/**
- * Remove the existing instance of lessc
- */
-	public function removeInstance() {
-		self::$_instance = null;
 	}
 }
