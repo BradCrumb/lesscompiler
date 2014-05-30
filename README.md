@@ -40,7 +40,8 @@ After that time the cache expires and after a new request the component will che
 			'formatter' 		=> 'compressed',	// lessphp compatible formatter
 			'variables' 		=> array(),			// Pass variables from php to LESS
 			'forceCompiling' 	=> false,			// Always recompile
-			'autoRun' 			=> false			// Check if compilation is necessary, this ignores the CakePHP Debug setting
+			'autoRun' 			=> false,			// Check if compilation is necessary, this ignores the CakePHP Debug setting
+			'sourceMap'			=> false			// Generate sourcemap
 		)
 	);
 

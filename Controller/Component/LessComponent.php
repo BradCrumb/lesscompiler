@@ -31,7 +31,8 @@ class LessComponent extends Component {
 		'preserveComments'	=> null,			// Preserve comments or remove them
 		'variables'			=> array(),			// Pass variables from php to LESS
 		'forceCompiling'	=> false,			// Always recompile
-		'autoRun'			=> false			// Check if compilation is necessary, this ignores the CakePHP Debug setting
+		'autoRun'			=> false,			// Check if compilation is necessary, this ignores the CakePHP Debug setting
+		'sourceMap'			=> false			// Generate sourcemap
 	);
 
 /**
@@ -411,6 +412,7 @@ class LessComponent extends Component {
 			$inputFile;
 
 		$lessCompiler = new LessCompiler();
+		$lessCompiler->setSourceMap($this->settings['sourceMap']);
 		$lessCompiler->setFormatter($this->settings['formatter']);
 
 		if (is_bool($this->settings['preserveComments'])) {

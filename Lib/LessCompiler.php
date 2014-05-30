@@ -16,6 +16,8 @@ class LessCompiler extends lessc {
 
 	protected $libFunctions = array();
 
+	protected $sourceMap = false;
+
 	public function registerFunction($name, $func) {
 		$this->libFunctions[$name] = $func;
 	}
@@ -39,7 +41,7 @@ class LessCompiler extends lessc {
 		$this->allParsedFiles = array();
 		$this->addParsedFile($fname);
 
-		$parser = new Less_Parser();
+		$parser = new Less_Parser(array('sourceMap' => $this->sourceMap));
 		$parser->SetImportDirs($this->getImportDirs());
 		if( count( $this->registeredVars ) ) $parser->ModifyVars( $this->registeredVars );
 
@@ -115,5 +117,9 @@ class LessCompiler extends lessc {
 			// we were given initially.
 			return $in;
 		}
+	}
+
+	public function setSourceMap($sourceMap) {
+		$this->sourceMap = (boolean)$sourceMap;
 	}
 }
