@@ -1,5 +1,5 @@
 <?php
-App::uses('lessc', 'LessCompiler.Vendor');
+require_once (__DIR__ . DS . '..' . DS . 'Vendor' . DS . 'less.php' . DS . 'lessc.inc.php');
 
 /**
  * LessCompiler
@@ -51,10 +51,10 @@ class LessCompiler extends lessc {
 					'root' => $root,
 					'compiled' => $this->compileFile($root),
 					'files' => json_encode($this->allParsedFiles()),
-					'variables' => json_encode($this->registeredVars),
-					'functions' => json_encode($this->libFunctions),
-					'formatter' => $this->formatterName,
-					'comments' => $this->preserveComments,
+					//'variables' => json_encode($this->registeredVars),
+					//'functions' => json_encode($this->libFunctions),
+					//'formatter' => $this->formatterName,
+					//'comments' => $this->preserveComments,
 					'importDirs' => json_encode((array)$this->importDir),
 					'updated' => time(),
 			);
