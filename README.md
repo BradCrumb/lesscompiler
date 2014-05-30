@@ -1,6 +1,6 @@
 # LessCompiler
 
-LessCompiler is a CakePHP LESS component to (automatically) compile less-files (http://lesscss.org/) by using lessc.php (http://leafo.net/lessphp/).
+LessCompiler is a CakePHP LESS component to (automatically) compile less-files (http://lesscss.org/) by using less.php (https://github.com/oyejorge/less.php).
 
 ## Requirements
 
@@ -38,7 +38,6 @@ After that time the cache expires and after a new request the component will che
 			'sourceFolder' 		=> 'less', 			// Where to look for LESS files, (From the APP directory)
        		'targetFolder' 		=> false, 			// Where to put the generated css (From the webroot directory)
 			'formatter' 		=> 'compressed',	// lessphp compatible formatter
-			'preserveComments' 	=> null, 			// Preserve comments or remove them
 			'variables' 		=> array(),			// Pass variables from php to LESS
 			'forceCompiling' 	=> false,			// Always recompile
 			'autoRun' 			=> false			// Check if compilation is necessary, this ignores the CakePHP Debug setting
@@ -48,9 +47,3 @@ After that time the cache expires and after a new request the component will che
 ## License
 GNU General Public License, version 3 (GPL-3.0)
 http://opensource.org/licenses/GPL-3.0
-
-
-
-
-
-

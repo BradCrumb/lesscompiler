@@ -421,6 +421,10 @@ class LessComponent extends Component {
 			$lessCompiler->setVariables($this->settings['variables']);
 		}
 
+		$lessCompiler->registerFunction('arie', function($var) {
+			return $var;
+		});
+
 		$newCache = $lessCompiler->cachedCompile($cache, $this->settings['forceCompiling']);
 
 		if (true === $this->settings['forceCompiling'] ||
